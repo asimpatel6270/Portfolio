@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asim Patel - Developer Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .pho{
+                width: 484px;
+            height: 280px;
+    border-radius: 175px;
+        }
+        :root {
+            --bg-dark: #0B1120;
+            --bg-card: rgba(29, 38, 61, 0.5);
+            --border-color: rgba(56, 73, 117, 0.5);
+            --text-light: #E2E8F0;
+            --text-muted: #8393AF;
+            --accent-primary: #06b6d4; /* cyan-500 */
+            --accent-secondary: #3b82f6; /* blue-500 */
+        }
+
+        /* Set dark theme as default */
+        html {
+            background-color: var(--bg-dark);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-muted);
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(6, 182, 212, 0.1), transparent 30%),
+                radial-gradient(circle at 85% 75%, rgba(59, 130, 246, 0.1), transparent 40%);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        /* Custom scrollbar for a tech look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--border-color);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: var(--accent-primary);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glassmorphism Card Style - @apply removed */
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .card:hover {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+            transform: translateY(-8px);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-black/20 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-slate-800/60">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-slate-100 flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Asim Patel
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-slate-400 hover:text-cyan-400 transition-colors">About</a>
+                <a href="#skills" class="text-slate-400 hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#contact" class="text-slate-400 hover:text-cyan-400 transition-colors">Contact</a>
+            </nav>
+            <button id="mobile-menu-btn" class="md:hidden">
+                <i data-lucide="menu" class="h-6 w-6 text-slate-300"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/90 border-t border-slate-800 backdrop-blur-lg">
+            <a href="#about" class="block py-3 px-6 text-sm text-slate-300 hover:bg-slate-800">About</a>
+            <a href="#skills" class="block py-3 px-6 text-sm text-slate-300 hover:bg-slate-800">Skills</a>
+            <a href="#contact" class="block py-3 px-6 text-sm text-slate-300 hover:bg-slate-800">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-24">
+
+        <!-- Hero Section -->
+        <section id="hero" class="py-24 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
+                    <div class="md:col-span-3 text-center md:text-left reveal">
+                        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-50 mt-2 mb-6">
+                            Building Digital Experiences with <span class="gradient-text">Precision and Passion</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto md:mx-0">
+                            A driven Computer Science student exploring the frontiers of web development, data science, and artificial intelligence.
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-center md:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="#contact" class="w-full sm:w-auto bg-cyan-500 text-white font-semibold px-8 py-3 rounded-lg shadow-lg shadow-cyan-500/20 hover:bg-cyan-600 hover:shadow-cyan-500/40 transition-all duration-300">
+                                Contact Me
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 flex justify-center reveal">
+                        <div class="w-64 h-64 lg:w-72 lg:h-72 rounded-full bg-slate-800/50 border-4 border-cyan-500/50 flex items-center justify-center">
+                            <img class="pho" src="photo.jpg" alt="photo">
+                            <i data-lucide="user" class="w-24 h-24 text-slate-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6 reveal">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100 mb-2">About Me</h2>
+                    <p class="text-lg text-slate-400 mb-12 text-center max-w-3xl mx-auto">I'm a fast learner, driven by a deep curiosity for technology and its potential to create meaningful solutions.</p>
+                </div>
+                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="card p-6 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-cyan-500/10 mx-auto mb-4">
+                            <i data-lucide="graduation-cap" class="w-8 h-8 text-cyan-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">Academic Foundation</h3>
+                        <p class="text-slate-400">Pursuing a B.Tech in CSE, building a strong foundation in data structures, algorithms, and software engineering.</p>
+                    </div>
+                    <div class="card p-6 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-cyan-500/10 mx-auto mb-4">
+                            <i data-lucide="users" class="w-8 h-8 text-cyan-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">Leadership & Teamwork</h3>
+                        <p class="text-slate-400">As a member of the technical committee and ACM, I've gained hands-on experience in collaborative project execution.</p>
+                    </div>
+                    <div class="card p-6 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-cyan-500/10 mx-auto mb-4">
+                            <i data-lucide="lightbulb" class="w-8 h-8 text-cyan-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">Future Focused</h3>
+                        <p class="text-slate-400">Passionate about AI/ML and constantly exploring new tools and frameworks to stay at the forefront of technology.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+            <div class="container mx-auto px-6 reveal">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100 mb-2">My Tech Stack</h2>
+                    <p class="text-lg text-slate-400 mb-12 text-center max-w-3xl mx-auto">A collection of the primary languages, frameworks, and tools I use to bring ideas to life.</p>
+                </div>
+                <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-4xl mx-auto">
+                    <!-- Skills will be injected by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6 text-center reveal">
+                <div class="max-w-xl mx-auto card p-8 md:p-12 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100 mb-2">Let's Build Something Great</h2>
+                    <p class="text-slate-400 my-6">
+                        I'm actively seeking new opportunities to learn and contribute. Whether you have a project in mind or an internship opportunity, I'd love to connect.
+                    </p>
+                    <a href="https://www.linkedin.com/in/asim-patel-1b9895335/" class="inline-block bg-cyan-500 text-white font-bold text-lg px-8 py-4 rounded-lg shadow-lg shadow-cyan-500/20 hover:bg-cyan-600 hover:shadow-cyan-500/40 transition-all duration-300">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/60 py-10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://github.com/asimpatel6270" target="_blank" aria-label="GitHub Profile" class="text-slate-500 hover:text-cyan-400 transition-colors">
+                    <i data-lucide="github" class="h-6 w-6"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/asim-patel-1b9895335/" target="_blank" aria-label="LinkedIn Profile" class="text-slate-500 hover:text-cyan-400 transition-colors">
+                    <i data-lucide="linkedin" class="h-6 w-6"></i>
+                </a>
+            </div>
+            <p class="text-sm text-slate-500">&copy; 2025 Asim Patel. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+
+            // --- Mobile Menu ---
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+            document.querySelectorAll('#mobile-menu a, nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if(!mobileMenu.classList.contains('hidden')) {
+                       mobileMenu.classList.add('hidden')
+                    }
+               });
+            });
+
+            // --- Scroll Animations ---
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealElements.forEach(el => observer.observe(el));
+
+            // --- Skills Grid Generator ---
+            const skillsData = [
+                { name: 'Python', icon: 'code-2' },
+                { name: 'HTML', icon: 'file-code' },
+                { name: 'CSS', icon: 'palette' },
+                { name: 'JavaScript', icon: 'braces' },
+                { name: 'Java', icon: 'coffee' },
+                { name: 'DSA', icon: 'binary' },
+                { name: 'AI/ML', icon: 'brain-circuit' },
+                { name: 'Git', icon: 'git-branch' },
+                { name: 'C', icon: 'hash' }
+            ];
+            const skillsGrid = document.getElementById('skills-grid');
+            skillsGrid.innerHTML = skillsData.map(skill => `
+                <div class="card p-4 text-center aspect-square flex flex-col justify-center items-center rounded-xl shadow-lg overflow-hidden transform transition-all duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 mb-3">
+                        <i data-lucide="${skill.icon}" class="w-8 h-8 text-cyan-400"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-200 text-sm">${skill.name}</h3>
+                </div>
+            `).join('');
+            lucide.createIcons();
+
+        });
+    </script>
+</body>
+</html>
